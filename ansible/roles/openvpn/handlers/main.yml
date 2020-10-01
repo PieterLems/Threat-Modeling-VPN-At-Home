@@ -1,0 +1,16 @@
+---
+- name: ubuntu_restart_openvpn
+  service:
+    name: openvpn@server
+    state: restarted
+
+- name: openbsd_restart_openvpn
+  command: rcctl restart openvpn
+
+- name: enable_packet_filter
+  shell: |
+    pfctl -e
+    pfctl -f /etc/pf.conf
+
+- name: enable_ip_forwarding
+  command: sysctl net.inet.ip.forwarding=1
