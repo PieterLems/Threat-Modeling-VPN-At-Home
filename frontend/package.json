@@ -14,13 +14,29 @@
   "dependencies": {
     "axios": "^0.18.0",
     "core-js": "^2.5.7",
+
+    // / Vulnerability: Cross-site Scripting (XSS)
+    // / CVSS 6.3 https://snyk.io/vuln/SNYK-JS-JQUERY-565129  [MEDIUM]
+    // / CVSS 6.5 https://snyk.io/vuln/SNYK-JS-JQUERY-567880  [MEDIUM]
+    // / Solution: Upgrade jquery to version 3.5.0 or higher.
     "jquery": "^3.3.1",
     "js-cookie": "^2.2.0",
+
+    /// Vulnerability: Prototype Pollution
+    /// CVSS 6.3 https://snyk.io/vuln/SNYK-JS-LODASH-567746   [MEDIUM]
+    /// CVSS 6.3 https://snyk.io/vuln/npm:lodash:20180130     [MEDIUM]
+    /// CVSS 9.8 https://snyk.io/vuln/SNYK-JS-LODASH-590103   [HIGH]
+    /// CVSS 7.3 https://snyk.io/vuln/SNYK-JS-LODASH-608086   [HIGH]
+    /// Solution: Upgrade lodash to version 4.17.20 or higher.
     "lodash": "^4.17.10",
     "moments": "0.0.2",
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-vue": "^0.7.0",
     "testdouble": "^3.8.1",
+
+    /// Vulnerability: Cross-site Scripting (XSS)
+    /// CVSS 6.5 https://snyk.io/vuln/npm:vue:20180802        [MEDIUM]
+    /// Solution: Upgrade jquery to version 3.5.0 or higher.
     "vue": "^2.5.16",
     "vue-property-decorator": "^6.1.0",
     "vue-router": "^3.0.1",
