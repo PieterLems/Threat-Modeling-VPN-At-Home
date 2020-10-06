@@ -47,6 +47,7 @@ class AdminServerSerializer(ServerSerializer):
     class Meta(ServerSerializer.Meta):
         fields = ServerSerializer.Meta.fields + ['download_url']
 
+    # POI Voor downloaden van .conf file via frontend
     def get_download_url(self, instance):
         kwargs={'server_id': instance.id, 'filename': slugify(instance.name) + '.conf'}
         return reverse('openvpn:download-server-config', kwargs=kwargs)

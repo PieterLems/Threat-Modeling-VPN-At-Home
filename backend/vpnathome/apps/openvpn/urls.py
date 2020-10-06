@@ -12,6 +12,7 @@ api_urlpatterns = [
     path('clients/<int:id>/send/', ClientApi.as_view({'post': 'send_email'}), name='send-client-config'),
 ]
 
+# POI Voor downloaden van .conf file via frontend
 views_urlpatterns = [
     re_path('download/server/(?P<server_id>\d+)/(?P<filename>\w+)', DownloadServerConfig.as_view(), name='download-server-config'),
     re_path('download/client/(?P<client_id>\d+)/(?P<filename>\w+)', DownloadClientConfig.as_view(), name='download-client-config')

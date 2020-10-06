@@ -192,6 +192,7 @@ class Client(models.Model):
     def email(self):
         return self.owner.email
 
+    # POI Voor downloaden van .conf file via frontend
     @property
     def filename(self):
         return "{client}--at--{server}.conf".format(client=slugify(self.name), server=slugify(self.server.name))
