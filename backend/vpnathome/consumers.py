@@ -119,7 +119,7 @@ class DeploymentConsumer(GenericProcessRunnerConsumer):
         hostname = kwargs.get('hostname', None)
         if not hostname:
             raise CommandError('invalid hostname')
-        return [get_bin_path("deploy_vpn.sh"), "--host", hostname]
+        return [get_bin_path("deploy_vpn.sh"), "--host", hostname]  # POI ?
 
 
 class UpdateBlockLists(GenericProcessRunnerConsumer):

@@ -73,7 +73,7 @@ def filter_objects_to_map_by_pk(klass, **kwargs):
     return {item.pk: item for item in klass.objects.filter(**kwargs)}
 
 
-def user_input(msg, default=None, validator=None):
+def user_input(msg, default=None, validator=None):  # POI ??
     """
     Displays prompt and allows user to enter some data.
 

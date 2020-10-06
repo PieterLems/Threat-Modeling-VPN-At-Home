@@ -9,6 +9,8 @@ You should not edit this file (usually). If you want to alter
 configuration, check private ``settings.json`` file first.
 """
 
+# POI? -> What settings can be overwritten and what is the resulting effect..?
+
 import copy
 import json
 from os import access, R_OK, getcwd
