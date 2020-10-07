@@ -40,7 +40,7 @@ class ManagementCommand(BaseCommand):
             return self.run(*args, **options)
 
     def run(self, *args, **options):
-        raise NotImplementedError("run() is not implemented")
+        raise NotImplementedError("run() is not implemented")  # POI ?!
 
     @property
     def is_quiet(self):

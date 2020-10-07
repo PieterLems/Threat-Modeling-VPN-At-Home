@@ -63,7 +63,7 @@ class Command(ManagementCommand):
             server = get_object_or_none(Server, hostname=hostname)
         vars = {}
         if server:
-            vars['ansible_user'] = 'root'
+            vars['ansible_user'] = 'root'  # POI ??????????????????????
             vars['vpn_network'] = str(server.network)
             vars['vpn_gateway'] = str(server.gateway)
             vars['vpn_name'] = server.name

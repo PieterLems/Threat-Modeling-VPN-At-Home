@@ -27,7 +27,7 @@ class SettingsApi(RetrieveUpdateAPIView):
         return super().dispatch(request, *args, **kwargs)
 
 
-class BlockListUrlApi(ViewSet):
+class BlockListUrlApi(ViewSet):  # POI ???
 
     permission_classes = [IsAdminUser]
 

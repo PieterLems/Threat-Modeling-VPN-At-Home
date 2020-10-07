@@ -20,7 +20,7 @@ class Command(ManagementCommand):
 
     help = 'Generate settings.json file with application settings. '\
            'Existing e-mail settings from db will be reused.'
-
+    # POI ?????????????????????
     # important, as db is not available before generating config;
     # don't run command under db transaction
     uses_db = False
