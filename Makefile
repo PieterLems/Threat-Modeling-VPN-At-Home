@@ -50,6 +50,19 @@ distclean:
 	rm -rf env/
 	rm -rf vpnathome.egg-info/
 
+deb:
+	git clean -fdx
+	debuild --no-lintian -i -uc -us -b
+
+install_deb:
+	sudo dpkg -i ../vpnathome*.deb
+
+remove_deb:
+	sudo dpkg --remove vpnathome
+
+purge_deb:
+	sudo dpkg --purge vpnathome
+
 # env:
 # 	python3 -m venv env
 # 	$(PYTHON) env/bin/pip install pypi/wheel*tar.gz
@@ -103,19 +116,6 @@ distclean:
 # 	@echo Reload your shell to use NVM-installed Node.js.
 # 	@echo After that, you can make devel to bootstrap your development environment.
 # 	@echo Enjoy!
-
-deb:
-	git clean -fdx
-	debuild --no-lintian -i -uc -us -b
-
-install_deb:
-	sudo dpkg -i ../vpnathome*.deb
-
-remove_deb:
-	sudo dpkg --remove vpnathome
-
-purge_deb:
-	sudo dpkg --purge vpnathome
 
 # runserver:
 # 	$(PYTHON) env/bin/manage.py runserver --insecure 8001
