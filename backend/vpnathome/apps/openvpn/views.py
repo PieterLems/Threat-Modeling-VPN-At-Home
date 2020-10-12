@@ -11,6 +11,7 @@ from .models import Client, Server
 class DownloadServerConfig(View):
 
     def get(self, request, server_id, **kwargs):
+        // POI - Could possibly forge the request user to download server configs
         server = get_object_or_404(Server, owner=self.request.user, id=server_id)
         return HttpResponse(content=server.render_to_string(), content_type=server.mimetype)
 
@@ -19,6 +20,7 @@ class DownloadServerConfig(View):
 class DownloadClientConfig(View):
 
     def get(self, request, client_id, **kwargs):
+        // POI - Could possibly forge the request user to download client configs
         if self.request.user.is_superuser:
             client = get_object_or_404(Client, id=client_id)
         else:

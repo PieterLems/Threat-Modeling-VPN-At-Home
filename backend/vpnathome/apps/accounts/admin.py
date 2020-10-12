@@ -6,12 +6,15 @@ from django.utils.translation import ugettext_lazy as _
 from .models import User
 
 
+
+### Form class for updating user data
 class UserChangeForm(CoreUserChangeForm):
 
     class Meta(CoreUserChangeForm.Meta):
         model = User
 
 
+### Form class for creating a new user
 class UserCreationForm(CoreUserCreationForm):
 
     class Meta:
@@ -21,8 +24,10 @@ class UserCreationForm(CoreUserCreationForm):
         field_classes = {'email': EmailField}
 
 
+### Admin database model
 class UserAdmin(CoreUserAdmin):
 
+    ### Assign the form classes to the admin to introduce this funtionality to the user
     form = UserChangeForm
     add_form = UserCreationForm
 
@@ -48,5 +53,5 @@ class UserAdmin(CoreUserAdmin):
 
     list_display = ('email', 'first_name', 'last_name', 'is_staff', 'is_active', 'is_superuser')
 
-
+### Register the models
 admin.site.register(User, UserAdmin)

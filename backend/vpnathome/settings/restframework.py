@@ -1,3 +1,5 @@
+# POI - Three different ways of authentication
+
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework.authentication.TokenAuthentication',

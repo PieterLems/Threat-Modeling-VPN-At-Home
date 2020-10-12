@@ -9,9 +9,10 @@ from rest_framework.generics import RetrieveAPIView
 
 from .serializers import LoginSerializer, RegistrationSerializer, UserSerializer
 
-
+### Interesting info: https://www.django-rest-framework.org/api-guide/authentication/
 class AuthenticationApi(ViewSet):
 
+    # POI - When logged in the session is saved to the django session table - can we steal it?
     def login(self, request):
         serializer = LoginSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
@@ -19,6 +20,7 @@ class AuthenticationApi(ViewSet):
         if user:
             login(request, user)
             response = Response(status=status.HTTP_200_OK)
+            # POI - Possibly vulnerable to cookie manipulation
             response.set_cookie('is_logged_in', "true")
             return response
         else:
