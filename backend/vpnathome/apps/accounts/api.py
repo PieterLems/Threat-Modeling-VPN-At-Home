@@ -29,6 +29,7 @@ class AuthenticationApi(ViewSet):
     def logout(self, request):
         logout(request)
         response = HttpResponseRedirect('/')
+        # POI - Session key is now deleted when logging out
         response.delete_cookie('is_logged_in')
         return response
 
